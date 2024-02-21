@@ -1,0 +1,20 @@
+:root {
+	// base
+	--font-family: "Avenir", "Arial", "sans-serif";
+	--content-width: 1280px;
+	--container-offset: 20px;
+	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+	@media(min-width:768px){
+		--container-offset: 40px;
+	}
+
+	// colors
+	--light-very-color: #fff;
+	--light-deep-color: #cbb68f;
+	--text-color: rgb(24, 34, 33);
+	--dark-color: rgb(17, 38, 21);
+	--light-color: #f6f6f6;
+	--highlighter-word-color: var(--light-deep-color);
+	--linear-gradient:linear-gradient(134.07deg, rgba(0, 72, 14, 0.08) 9.261%,rgba(0, 72, 14, 0) 82.983%);
+}
