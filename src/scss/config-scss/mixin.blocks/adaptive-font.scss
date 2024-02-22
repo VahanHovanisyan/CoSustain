@@ -1,21 +1,21 @@
 @mixin adaptiv-font($maxSize, $minSize) {
 	$addSize: $maxSize - $minSize;
-	$maxWidth: $wrapperWidth - 320;
-	font-size: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+	$maxWidth: $wrapperWidth - 375;
+	font-size: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth}));
 }
 // @mixin media-adaptiv-font($maxSize, $minSize) {
 // 	$addSize: $maxSize - $minSize;
-// 	$maxWidth: $wrapperWidth - 320;
+// 	$maxWidth: $wrapperWidth - 375;
 // 	font-size: #{$maxSize + px};
 // 	@media (max-width: ($wrapperWidth + px)) {
-// 		font-size: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+// 		font-size: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth}));
 // 	}
 // }
 @mixin media-adaptiv-font($maxSize, $minSize) {
 	$addSize: $maxSize - $minSize;
-	$maxWidth: $wrapperWidth - 320;
+	$maxWidth: $wrapperWidth - 375;
 	font-size: #{$maxSize + px};
-	font-size: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+	font-size: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth}));
 	@media (min-width: ($wrapperWidth + px)) {
 		font-size: #{$maxSize + px};
 	}

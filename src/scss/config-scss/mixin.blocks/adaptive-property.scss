@@ -1,12 +1,12 @@
 @mixin adaptiv-property($property, $maxSize, $minSize) {
 	$addSize: $maxSize - $minSize;
-	$maxWidth: $wrapperWidth - 320;
-	#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+	$maxWidth: $wrapperWidth - 375;
+	#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth}));
 }
 @mixin media-adaptiv-property($property, $maxSize, $minSize) {
 	$addSize: $maxSize - $minSize;
-	$maxWidth: $wrapperWidth - 320;
-	#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+	$maxWidth: $wrapperWidth - 375;
+	#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth}));
 	@media (min-width: ($wrapperWidth + px)) {
 		#{$property}: #{$maxSize + px};
 	}

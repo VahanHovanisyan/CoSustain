@@ -2,6 +2,7 @@
 
 // librarys
 @import "./library/burger.scss";// burger
+@import "./library/popup.scss";// popup
 // /librarys
 
 @import "./config-scss/vars.scss";// vars
@@ -19,6 +20,10 @@
 
 // sections
 @import "./common.blocks/hero.scss";// hero
+@import "./common.blocks/who-we-are.scss";// who-we-are
+@import "./common.blocks/core-values.scss";// core-values
+@import "./common.blocks/key-services.scss";// key-services
+@import "./common.blocks/partners.scss";// partners
 // /sections
 
 @import "./common.blocks/footer.scss";// footer
