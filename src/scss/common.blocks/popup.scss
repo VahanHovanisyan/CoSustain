@@ -1,0 +1,48 @@
+.popup {
+	&__close-button {
+		right: 33px;
+		top: 33px;
+		border: none;
+		padding: 0;
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		border: 2px solid var(--dark-color);
+		background-color: var(--dark-color);
+		cursor: pointer;
+		transition: background-color 0.3s ease 0s;
+		
+		@include hover {
+			&:hover {
+				background-color: var(--light-very-color);
+				.popup__icon-close {
+					stroke: var(--dark-color);
+				}
+			}
+		}
+
+		&:focus-visible {
+			background-color: var(--light-very-color);
+			.popup__icon-close {
+				stroke: var(--dark-color);
+			}
+		}
+	}
+
+	&__icon-close {
+		stroke-width: 3px;
+		stroke: var(--light-very-color);
+		transition: stroke 0.3s ease 0s;
+	}
+
+	&__title {
+		max-width: 500px;
+		margin: 0 auto;
+		margin-bottom: 8px;
+		text-align: center;
+	}
+
+	&__text {
+		text-align: center;
+	}
+}

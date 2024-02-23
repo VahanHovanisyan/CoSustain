@@ -38,7 +38,7 @@
 			flex-direction: column;
 			align-items: flex-start;
 			text-align: start;
-			border-radius: 16px 100px 16px 16px;
+			border-radius: 16px 80px 16px 16px;
 			@media (min-width: 1200px) {
 				padding: 30px;
 				&:nth-child(4n + 1) {
@@ -77,11 +77,14 @@
 	}
 
 	&__item-icon {
+		min-width: 35px;
 		width: 35px;
 		height: 35px;
 	}
 
 	&__item-title {
+		max-width: 380px;
+		overflow: hidden;
 	}
 
 	&__item-text {
