@@ -20,7 +20,7 @@ import gulpTypograf from "gulp-typograf";
 import gulpWebpHtml from "gulp-webp-html-nosvg";
 
 // plugins for css
-// import gulpGroupCssMediaQueries from "gulp-group-css-media-queries";
+import gulpGroupCssMediaQueries from "gulp-group-css-media-queries";
 import gulpCsso from "gulp-csso";
 import gulpRename from "gulp-rename";
 import gulpAutoprefixer from "gulp-autoprefixer";
@@ -77,7 +77,7 @@ const css = () => {
 		.pipe(gulpPlumber(plumberNotify('css')))
 		.pipe(dartSass())
 		// .pipe(gulpWebpCss())
-		// .pipe(gulpGroupCssMediaQueries())
+		.pipe(gulpGroupCssMediaQueries())
 
 		.pipe(gulpIf(IS_BUILD, gulpAutoprefixer({
 			cascade: false,

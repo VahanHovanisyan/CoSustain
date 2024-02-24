@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html class="page" lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/index.min.css">
-  <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/index.min.css">
+	<title>Document</title>
 </head>
+
 <body class="page__body">
-  @include('./common.blocks/header.html')
-  <main class="main">
-    @include('./common.blocks/hero.html')
+	@include('./common.blocks/header.html')
+	<main class="main">
+		@include('./common.blocks/hero.html')
 		@include('./common.blocks/who-we-are.html')
 		@include('./common.blocks/core-values.html')
 		@include('./common.blocks/key-services.html')
@@ -17,11 +19,13 @@
 		@include('./common.blocks/services.html')
 		@include('./common.blocks/about.html')
 		@include('./common.blocks/team.html')
-  </main>
+		@include('./common.blocks/blog.html')
+	</main>
 
 	@include('./common.blocks/popup.html') <!-- popup -->
 
-  @include('./common.blocks/footer.html')
-  <script src="js/index.min.js"></script>
+	@include('./common.blocks/footer.html')
+	<script src="js/index.min.js"></script>
 </body>
+
 </html>

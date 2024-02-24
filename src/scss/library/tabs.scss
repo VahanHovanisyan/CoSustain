@@ -1,0 +1,38 @@
+.tabs {
+	box-sizing: border-box;
+	font-family: Arial, Verdana, sans-serif;
+
+	&__content {
+		box-sizing: inherit;
+		position: relative;
+	}
+
+	&__panel {
+		box-sizing: inherit;
+		display: none;
+
+		&_active {
+			display: block;
+		}
+	}
+
+	&__list {
+		box-sizing: inherit;
+		list-style: none;
+		padding: 0;
+		display: flex;
+	}
+
+	&__button {
+		box-sizing: inherit;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+
+		&_active {
+			background-color: gray;
+			color: #fff;
+		}
+	}
+}

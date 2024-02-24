@@ -1,0 +1,153 @@
+.blog {
+	padding: 40px 0;
+	@media (min-width: 768px) {
+		padding: 70px 0;
+	}
+
+	&__container {
+	}
+
+	&__content {
+	}
+
+	&__title {
+		margin-bottom: 35px;
+
+		@media(min-width:768px){
+			margin-bottom: 50px;
+		}
+	}
+
+	&__tabs {
+		position: relative;
+	}
+
+	&__tabs-list {
+		position: relative;
+		display: inline-flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+		max-width: 600px;
+		overflow: hidden;
+		padding: 0;
+		margin: 0;
+		margin-bottom: 30px;
+
+		@media (min-width: 768px) {
+			position: absolute;
+			top: 2px;
+			left: 0;
+			right: auto;
+			z-index: 10;
+			gap: 20px;
+			margin: 0;
+		}
+	}
+
+	&__tabs-button {
+		padding: 10px 15px;
+		font-size: 15px;
+
+		@media (min-width: 768px) {
+			padding: 12px 32px;
+			font-size: 18px;
+		}
+
+		&.tabs__button_active {
+			background-color: var(--dark-color);
+			color: var(--light-very-color);
+		}
+	}
+
+	&__tabs-panel {
+	}
+
+	&__slider {
+		padding-bottom: 75px;
+
+		@media (min-width: 768px) {
+			padding-top: 100px;
+		}
+	}
+
+	&__slide {
+	}
+
+	&__slide-inner {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 15px;
+		border-radius: 20px;
+		overflow: hidden;
+		background-color: var(--light-very-color);
+	}
+
+	&__slide-img {
+		// max-width: 260px;
+		height: 180px;
+		border-radius: 10px;
+	}
+
+	&__slide-title {
+	}
+
+	&__slide-text {
+		height: 80px;
+		margin: 0;
+		overflow: auto;
+	}
+
+	&__slide-link {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__buttons-slider-box {
+		position: absolute;
+		top: auto;
+		right: auto;
+		left: 0;
+		bottom: 2px;
+		display: flex;
+		justify-content: space-between;
+		width: 120px;
+		height: 50px;
+
+		@media (min-width: 768px) {
+			right: 2px;
+			top: 2px;
+			left: auto;
+		}
+	}
+
+	&__button-slider {
+		position: relative;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		width: 50px;
+		height: 50px;
+		margin: 0;
+
+		.arrow-box-circle__icon {
+			width: 15px;
+			height: 15px;
+		}
+
+		&::after {
+			display: none;
+		}
+
+		&_prev {
+			.arrow-box-circle__icon {
+				transform: rotate(180deg);
+			}
+		}
+
+		&_next {
+		}
+	}
+}
