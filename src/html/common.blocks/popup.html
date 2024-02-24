@@ -1,13 +1,12 @@
 <div class="graph-modal popup">
-	<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="book-a-consultation">
+	<div class="graph-modal__container popup__container" role="dialog" aria-modal="true" data-graph-target="book-a-consultation">
 		<button class="button-reset graph-modal__close js-modal-close popup__close-button"
 			aria-label="Закрыть модальное окно">
 			<svg class="popup__icon-close" width="15" height="15">
 				<use xlink:href="img/svg/sprite.svg#close-icon" />
 			</svg>
 		</button>
-		<section class="graph-modal__content">
-
+		<section class="graph-modal__content popup__content">
 			<h2 class="popup__title subtitle">Book <strong class="title-word-important">a Consultation</strong></h2>
 			<p class="popup__text text">Leave your contacts, and we will get in touch with you</p>
 
@@ -18,8 +17,15 @@
 				<label class="form__label">
 					<input type="email" name="user_email" class="input-reset form__input" placeholder="Email">
 				</label>
-				<textarea name="user_message" cols="30" rows="10" placeholder="Your message"></textarea>
-				<button class="btn-reset form__btn">Отправить</button>
+				<textarea class="form__textarea" name="user_message" placeholder="Your message"></textarea>
+				<button class="button-reset form__button link">
+					Submit request
+					<span class="link__arrow-box-circle">
+						<svg class="link__icon">
+							<use xlink:href="img/svg/sprite.svg#arrow" />
+						</svg>
+					</span>
+				</button>
 			</form>
 		</section>
 	</div>

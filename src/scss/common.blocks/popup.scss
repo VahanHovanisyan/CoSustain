@@ -1,7 +1,25 @@
 .popup {
+	&__container {
+		max-width: 737px;
+		padding-top: 77px;
+		padding-bottom: 50px;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+
+		border-radius: 20px;
+		background: var(--light-very-color);
+		overflow: hidden;
+	}
+
 	&__close-button {
-		right: 33px;
-		top: 33px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		right: 17px;
+		top: 17px;
 		border: none;
 		padding: 0;
 		width: 44px;
@@ -11,7 +29,12 @@
 		background-color: var(--dark-color);
 		cursor: pointer;
 		transition: background-color 0.3s ease 0s;
-		
+
+		@media (min-width: 768px) {
+			right: 33px;
+			top: 33px;
+		}
+
 		@include hover {
 			&:hover {
 				background-color: var(--light-very-color);
@@ -40,9 +63,11 @@
 		margin: 0 auto;
 		margin-bottom: 8px;
 		text-align: center;
+		line-height: 130%;
 	}
 
 	&__text {
+		margin-bottom: 30px;
 		text-align: center;
 	}
 }

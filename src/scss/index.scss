@@ -5,11 +5,15 @@
 @import "./library/popup.scss";// popup
 // /librarys
 
+// config scss
 @import "./config-scss/vars.scss";// vars
 @import "./config-scss/fonts.scss";// fonts
 @import "./config-scss/global.scss";// global
 @import "./config-scss/reset-class.scss";// reset-class
 @import "./config-scss/mix-class.scss";// mix-class
+// /config scss
+
+// common blocks
 @import "./common.blocks/page.scss";// page
 @import "./common.blocks/page__body.scss";// page__body
 @import "./common.blocks/logo.scss";// logo
@@ -17,6 +21,7 @@
 @import "./common.blocks/navigation-list.scss";// navigation-list
 @import "./common.blocks/header.scss";// header
 @import "./common.blocks/main.scss";// main
+// /common blocks
 
 // sections
 @import "./common.blocks/hero.scss";// hero
@@ -25,6 +30,13 @@
 @import "./common.blocks/key-services.scss";// key-services
 @import "./common.blocks/partners.scss";// partners
 @import "./common.blocks/popup.scss";// popup
+@import "./common.blocks/services.scss";// services
+@import "./common.blocks/about.scss";// about
+@import "./common.blocks/team.scss";// team
 // /sections
+
+// form
+@import "./common.blocks/form.scss";// form
+// /form
 
 @import "./common.blocks/footer.scss";// footer

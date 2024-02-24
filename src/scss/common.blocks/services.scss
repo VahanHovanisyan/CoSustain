@@ -1,0 +1,27 @@
+.services {
+	padding: 40px 0;
+
+	@media (min-width: 768px) {
+		padding: 70px 0;
+	}
+	&__container {
+	}
+
+	&__title {
+		margin-bottom: 30px;
+		text-align: center;
+		
+		@media (min-width: 768px) {
+			margin-bottom: 50px;
+			text-align: left;
+		}
+	}
+
+	&__nav {
+	}
+
+	&__list {
+		gap: 20px;
+		padding: 0;
+	}
+}
