@@ -41,7 +41,29 @@ const tabs = new Tabs('tab1', {
 	firstTabActive: true,
 })
 
-const frame = document.querySelector('.contact__iframe');
+const lazyImages = document.querySelectorAll('[data-src]');
+const observerLazyLoad = new IntersectionObserver(entries => {
+  entries.forEach(entri => {
+    if (entri.isIntersecting) {
+			entri.target.setAttribute('src', entri.target.dataset.src)
+			entri.target.style.transition = '0.3s opacity ease 0s'
+      // entri.target.src = entri.target.dataset.src
+      entri.target.style.opacity = '0.3'
+      entri.target.addEventListener('load', function () {
+        setTimeout(() => {
+          // if () {
+            entri.target.style.opacity = '1'
+          // }
+        }, 300);
+      })
+      observerLazyLoad.unobserve(entri.target)
+    }
+  })
+}, {
+  rootMargin: '0px 0px 100px 0px',
+  threshold: 0,
+})
 
-var iframeDocument = frame.contentDocument || frame.contentWindow.document;
-console.log(iframeDocument);
+lazyImages.forEach(img => {
+  observerLazyLoad.observe(img);
+});
