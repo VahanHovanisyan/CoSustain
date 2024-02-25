@@ -20,10 +20,6 @@
 		grid-column: 1/-1;
 		justify-self: center;
 		margin-bottom: 32px;
-
-		@media (min-width: 992px) {
-			margin-bottom: 50px;
-		}
 	}
 
 	&__subtitle {

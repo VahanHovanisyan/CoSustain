@@ -2,7 +2,6 @@
 	position: relative;
 	z-index: 102;
 	padding: 15px;
-	margin-bottom: 20px;
 	background-color: var(--light-color);
 
 	&::before {
@@ -18,6 +17,7 @@
 	}
 
 	&__container {
+		max-width: 1360px;
 		padding-top: 15px;
 		padding-bottom: 15px;
 		border-radius: 20px;

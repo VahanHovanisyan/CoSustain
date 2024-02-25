@@ -10,6 +10,7 @@
 	color: var(--light-very-color);
 	font-size: 18px;
 	font-weight: 900;
+	outline: none;
 	transition:
 		background-color 0.3s ease 0s,
 		color 0.3s ease 0s;
@@ -48,6 +49,7 @@
 	&:focus-visible {
 		background-color: var(--light-very-color);
 		color: var(--dark-color);
+		box-shadow: 2px 2px 12px 4px var(--text-color);
 
 		.link__arrow-box-circle {
 			background-color: var(--dark-color);
@@ -57,7 +59,6 @@
 	&_light-color {
 		background-color: var(--light-very-color);
 		color: var(--dark-color);
-
 
 		.link__arrow-box-circle {
 			background-color: var(--dark-color);
@@ -90,14 +91,13 @@
 		}
 
 		&:focus-visible {
-			background-color: var(--light-very-color);
-			color: var(--dark-color);
+			background-color: var(--dark-color);
+			color: var(--light-very-color);
 
 			.link__arrow-box-circle {
-				background-color: var(--dark-color);
+				background-color: var(--light-very-color);
 			}
 		}
-
 	}
 
 	&__arrow-box-circle {
@@ -109,6 +109,7 @@
 		justify-content: center;
 		border-radius: 50%;
 		background-color: var(--light-very-color);
+		color: var(--light-deep-color);
 		transition: background-color 0.3s ease 0s;
 
 		@media (min-width: 768px) {

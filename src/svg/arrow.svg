@@ -2,5 +2,5 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink">
 	<path id="Vector"
 		d="M0 13.7217L11.6996 2.02246L0 2.02246L0 0L15.1661 0L15.1661 15.166L13.144 15.166L13.144 3.4668L1.4444 15.166L0 13.7217Z"
-		fill="#CBB68F" fill-opacity="1.000000" fill-rule="nonzero" />
+		fill="currentColor" fill-opacity="1.000000" fill-rule="nonzero" />
 </svg>

@@ -3,6 +3,7 @@
 
 	@media (min-width: 768px) {
 		padding: 70px 0;
+		padding-bottom: 40px;
 	}
 
 	&__container {
@@ -21,7 +22,7 @@
 	&__list {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 20px;
+		gap: 15px;
 		@media (min-width: 1200px) {
 			grid-template-columns: repeat(2, 1fr);
 		}
@@ -40,7 +41,7 @@
 			text-align: start;
 			border-radius: 16px 80px 16px 16px;
 			@media (min-width: 1200px) {
-				padding: 30px;
+				padding: 28px;
 				&:nth-child(4n + 1) {
 					border-radius: 20px 300px 20px 20px;
 					background: var(--light-very-color);

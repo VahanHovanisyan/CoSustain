@@ -3,6 +3,12 @@
 	width:120px;
 	height:35px;
 	z-index: 102;
+	outline: none;
+
+	&:focus-visible {
+		box-shadow: 2px 2px 12px 4px #000;
+	}
+
 	@media(min-width:576px){
 		width:179px;
 		height:44px;

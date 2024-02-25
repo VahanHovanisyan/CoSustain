@@ -1,25 +1,31 @@
 .form {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	gap: 14px;
 	width: 100%;
 	max-width: 670px;
 	margin: 0 auto;
 	&__label {
-		padding: 24px;
-		border: 1px solid rgba(34, 48, 78, 0.1);
-		border-radius: 16px;
-		backdrop-filter: blur(100px);
-		background: var(--light-very-color);
 	}
 
 	&__input {
 		display: block;
+		outline: none;
+		padding: 24px;
 		width: 100%;
+		border: 1px solid rgba(34, 48, 78, 0.1);
+		border-radius: 16px;
+		overflow: hidden;
+		backdrop-filter: blur(100px);
+		background: var(--light-very-color);
 		color: rgba(38, 48, 70, 0.5);
 		font-size: 18px;
 		font-weight: 500;
 		line-height: 101%;
+
+		&:focus-visible {
+			box-shadow: 2px 2px 12px 4px var(--text-color);
+		}
 	}
 
 	&__textarea {
@@ -35,6 +41,11 @@
 		font-size: 18px;
 		font-weight: 500;
 		line-height: 101%;
+		outline: none;
+
+		&:focus-visible {
+			box-shadow: 2px 2px 12px 4px var(--text-color);
+		}
 	}
 
 	&__button {

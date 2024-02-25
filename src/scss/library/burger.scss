@@ -270,6 +270,7 @@ body.dis-scroll {
 	cursor: pointer;
 	border: 2px solid var(--dark-color);
 	transition: background-color 0.3s ease 0s;
+	outline: none;
 	@include hover {
 		&:hover {
 			background-color: var(--light-very-color);

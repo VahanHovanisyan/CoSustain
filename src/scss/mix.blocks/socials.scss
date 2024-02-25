@@ -10,7 +10,8 @@
 		display: block;
 		width: 35px;
 		height: 35px;
-		&:hover {
+		outline: none;
+		&:hover,&:focus-visible {
 			.soc1als__icon {
 				stroke: #000;
 				fill: #000;

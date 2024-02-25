@@ -25,5 +25,11 @@
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 19px;
+		outline: none;
+		transition: color 0.3s ease 0s;
+
+		&:hover,&:focus-visible {
+			color: var(--light-deep-color);
+		}
 	}
 }

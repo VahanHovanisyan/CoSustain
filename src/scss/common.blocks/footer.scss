@@ -9,8 +9,9 @@
 		justify-content: space-between;
 		flex-direction: column;
 		gap: 40px;
+		max-width: 1360px;
 
-		@media(min-width:768px){
+		@media (min-width: 992px) {
 			flex-direction: row;
 		}
 	}
@@ -19,7 +20,10 @@
 	}
 
 	&__form-subscribe {
-		flex-shrink: 0;
+		@media (min-width: 992px) {
+			flex-shrink: 0;
+			flex-basis: 442px;
+		}
 	}
 
 	&__nav-breadcrumbs {
