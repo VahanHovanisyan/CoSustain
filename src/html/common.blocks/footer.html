@@ -1,5 +1,36 @@
 <footer class="footer">
-  <div class="footer__container container">
-    footer
-  </div>
+	<div class="footer__container container">
+		<div class="footer__content">
+			<nav class="footer__nav-breadcrumbs nav-breadcrumbs" title="">
+				<ul class="nav-breadcrumbs__list list-reset">
+					<li class="nav-breadcrumbs__item"><a href="#" class="nav-breadcrumbs__link">Main</a></li>
+					<li class="nav-breadcrumbs__item"><a href="#" class="nav-breadcrumbs__link">Who We Are?</a></li>
+					<li class="nav-breadcrumbs__item"><a href="#" class="nav-breadcrumbs__link">Services</a></li>
+					<li class="nav-breadcrumbs__item"><a href="#" class="nav-breadcrumbs__link">About us</a></li>
+					<li class="nav-breadcrumbs__item"><a href="#" class="nav-breadcrumbs__link">Blog</a></li>
+					<li class="nav-breadcrumbs__item"><a href="#" class="nav-breadcrumbs__link">Contacts</a></li>
+				</ul>
+			</nav>
+			<a class="footer__logo logo" href="#">
+				<img class="logo__img" loading="lazy" src="./img/logo_light.png" alt="logo">
+			</a>
+			<p class="footer__privacy-text">
+				<span>Privacy policy</span>
+				<span>Terms of use</span>
+			</p>
+		</div>
+		<form action="#" class="footer__form-subscribe form-subscribe">
+			<h3 class="form-subscribe__title">Subscribe</h3>
+			<div class="form-subscribe__input-button-box">
+				<label class="form-subscribe__label">
+					<input type="email" name="user_email" class="input-reset form-subscribe__input" placeholder="Your Email">
+				</label>
+				<button class="button-reset form-subscribe__button">
+					<svg class="form-subscribe__submit-icon">
+						<use xlink:href="img/svg/sprite.svg#submit-form"/>
+					</svg>
+				</button>
+			</div>
+		</form>
+	</div>
 </footer>

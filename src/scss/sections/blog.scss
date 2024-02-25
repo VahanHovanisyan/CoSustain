@@ -8,6 +8,7 @@
 	}
 
 	&__content {
+
 	}
 
 	&__title {
@@ -34,7 +35,7 @@
 		margin: 0;
 		margin-bottom: 30px;
 
-		@media (min-width: 768px) {
+		@media (min-width: 576px) {
 			position: absolute;
 			top: 2px;
 			left: 0;
@@ -66,7 +67,7 @@
 	&__slider {
 		padding-bottom: 75px;
 
-		@media (min-width: 768px) {
+		@media (min-width: 576px) {
 			padding-top: 100px;
 		}
 	}
@@ -115,10 +116,11 @@
 		width: 120px;
 		height: 50px;
 
-		@media (min-width: 768px) {
+		@media (min-width: 576px) {
 			right: 2px;
 			top: 2px;
 			left: auto;
+			bottom: auto;
 		}
 	}
 

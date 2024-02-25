@@ -998,6 +998,67 @@
         </div>
     </div>
 </section>
+        <section class="contact">
+    <div class="contact__container container">
+        <form action="#" class="form">
+            <h2 class="contact__title title">Contact <strong class="title-word-important">Us</strong></h2>
+            <label class="form__label">
+                <input type="text" name="user_name" class="input-reset form__input" placeholder="Name">
+            </label>
+            <label class="form__label">
+                <input type="email" name="user_email" class="input-reset form__input" placeholder="Email">
+            </label>
+            <textarea class="form__textarea" name="user_message" placeholder="Your message"></textarea>
+            <button class="button-reset form__button link">
+                Submit request
+                <span class="link__arrow-box-circle">
+                    <svg class="link__icon">
+                        <use xlink:href="img/svg/sprite.svg#arrow" />
+                    </svg>
+                </span>
+            </button>
+        </form>
+        <div class="contact__map-box">
+            <iframe class="contact__iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d48786.94113132651!2d44.302336!3d40.160460799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sam!4v1708843079650!5m2!1sru!2sam" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="contact__location-box">
+                <svg class="contact__location-icon">
+                    <use xlink:href="img/svg/sprite.svg#location"/>
+                </svg>
+                <p class="contact__location-text">Address Address Address Address Address Address Address Address Address </p>
+            </div>
+            <ul class="soc1als list-reset">
+                <li class="soc1als__item">
+                    <a class="soc1als__link" href="#">
+                        <svg class="soc1als__icon">
+                            <use xlink:href="img/svg/sprite.svg#twitter"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="soc1als__item">
+                    <a class="soc1als__link" href="#">
+                        <svg class="soc1als__icon">
+                            <use xlink:href="img/svg/sprite.svg#instagram"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="soc1als__item">
+                    <a class="soc1als__link" href="#">
+                        <svg class="soc1als__icon soc1als__icon_stroke-width">
+                            <use xlink:href="img/svg/sprite.svg#youtube"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="soc1als__item">
+                    <a class="soc1als__link" href="#">
+                        <svg class="soc1als__icon">
+                            <use xlink:href="img/svg/sprite.svg#linkedin"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
     </main>
 
     <div class="graph-modal popup">
@@ -1034,9 +1095,40 @@
 </div> <!-- popup -->
 
     <footer class="footer">
-  <div class="footer__container container">
-    footer
-  </div>
+    <div class="footer__container container">
+        <div class="footer__content">
+            <nav class="footer__nav-breadcrumbs nav-breadcrumbs" title="">
+                <ul class="nav-breadcrumbs__list list-reset">
+                    <li class="nav-breadcrumbs__item"><a href="#" class="nav-breadcrumbs__link">Main</a></li>
+                    <li class="nav-breadcrumbs__item"><a href="#" class="nav-breadcrumbs__link">Who We Are?</a></li>
+                    <li class="nav-breadcrumbs__item"><a href="#" class="nav-breadcrumbs__link">Services</a></li>
+                    <li class="nav-breadcrumbs__item"><a href="#" class="nav-breadcrumbs__link">About us</a></li>
+                    <li class="nav-breadcrumbs__item"><a href="#" class="nav-breadcrumbs__link">Blog</a></li>
+                    <li class="nav-breadcrumbs__item"><a href="#" class="nav-breadcrumbs__link">Contacts</a></li>
+                </ul>
+            </nav>
+            <a class="footer__logo logo" href="#">
+                <picture><source srcset="./img/logo_light.webp" type="image/webp"><img class="logo__img" loading="lazy" src="./img/logo_light.png" alt="logo"></picture>
+            </a>
+            <p class="footer__privacy-text">
+                <span>Privacy policy</span>
+                <span>Terms of use</span>
+            </p>
+        </div>
+        <form action="#" class="footer__form-subscribe form-subscribe">
+            <h3 class="form-subscribe__title">Subscribe</h3>
+            <div class="form-subscribe__input-button-box">
+                <label class="form-subscribe__label">
+                    <input type="email" name="user_email" class="input-reset form-subscribe__input" placeholder="Your Email">
+                </label>
+                <button class="button-reset form-subscribe__button">
+                    <svg class="form-subscribe__submit-icon">
+                        <use xlink:href="img/svg/sprite.svg#submit-form"/>
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </div>
 </footer>
     <script src="js/index.min.js"></script>
 </body>

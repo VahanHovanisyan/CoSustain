@@ -1,0 +1,31 @@
+.soc1als {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	&__item {
+	}
+
+	&__link {
+		display: block;
+		width: 35px;
+		height: 35px;
+		&:hover {
+			.soc1als__icon {
+				stroke: #000;
+				fill: #000;
+			}
+		}
+	}
+
+	&__icon {
+		fill: var(--dark-color);
+		stroke:var(--dark-color);
+		stroke-width: 1.5;
+		width: 33px;
+		height: 33px;
+
+		&_stroke-width {
+		}
+	}
+}

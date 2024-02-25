@@ -1,0 +1,128 @@
+.link {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 9px 10px 9px 27px;
+	border: 2px solid var(--dark-color);
+	border-radius: 50px;
+	cursor: pointer;
+	background-color: var(--dark-color);
+	color: var(--light-very-color);
+	font-size: 18px;
+	font-weight: 900;
+	transition:
+		background-color 0.3s ease 0s,
+		color 0.3s ease 0s;
+
+	@media (min-width: 768px) {
+		padding: 12px 10px 12px 32px;
+		gap: 16px;
+	}
+
+	@include hover {
+		&:hover {
+			background-color: var(--light-very-color);
+			color: var(--dark-color);
+
+			.link__arrow-box-circle {
+				background-color: var(--dark-color);
+			}
+		}
+	}
+
+	@include hover-none {
+		&:active {
+			transition:
+				background-color 0s ease 0s,
+				color 0s ease 0s;
+			background-color: var(--light-very-color);
+			color: var(--dark-color);
+
+			.link__arrow-box-circle {
+				transition: background-color 0s ease 0s;
+				background-color: var(--dark-color);
+			}
+		}
+	}
+
+	&:focus-visible {
+		background-color: var(--light-very-color);
+		color: var(--dark-color);
+
+		.link__arrow-box-circle {
+			background-color: var(--dark-color);
+		}
+	}
+
+	&_light-color {
+		background-color: var(--light-very-color);
+		color: var(--dark-color);
+
+
+		.link__arrow-box-circle {
+			background-color: var(--dark-color);
+		}
+
+		@include hover {
+			&:hover {
+				background-color: var(--dark-color);
+				color: var(--light-very-color);
+
+				.link__arrow-box-circle {
+					background-color: var(--light-very-color);
+				}
+			}
+		}
+
+		@include hover-none {
+			&:active {
+				transition:
+					background-color 0s ease 0s,
+					color 0s ease 0s;
+				background-color: var(--dark-color);
+				color: var(--light-color);
+
+				.link__arrow-box-circle {
+					transition: background-color 0s ease 0s;
+					background-color: var(--dark-color);
+				}
+			}
+		}
+
+		&:focus-visible {
+			background-color: var(--light-very-color);
+			color: var(--dark-color);
+
+			.link__arrow-box-circle {
+				background-color: var(--dark-color);
+			}
+		}
+
+	}
+
+	&__arrow-box-circle {
+		display: block;
+		width: 43px;
+		height: 43px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background-color: var(--light-very-color);
+		transition: background-color 0.3s ease 0s;
+
+		@media (min-width: 768px) {
+			width: 51px;
+			height: 51px;
+		}
+
+		&_dark-color {
+			background-color: var(--dark-color);
+		}
+	}
+	&__icon {
+		width: 15px;
+		height: 15px;
+		fill: var(--light-color);
+	}
+}

@@ -37,3 +37,8 @@ const slider = new Swiper('.blog__slider', {
 const tabs = new Tabs('tab1', {
 	firstTabActive: true,
 })
+
+const frame = document.querySelector('.contact__iframe');
+
+var iframeDocument = frame.contentDocument || frame.contentWindow.document;
+console.log(iframeDocument);

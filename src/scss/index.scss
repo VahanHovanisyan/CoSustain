@@ -1,45 +1,27 @@
 @import "./config-scss/mixin.scss";// mixin
+@import "./config-scss/vars.scss";// vars
 
 // librarys
-@import "./library/burger.scss";// burger
-@import "./library/popup.scss";// popup
-@import "./library/slider.scss";// slider
-@import "./library/tabs.scss";// tabs
+@import "library/1index.scss";
 // /librarys
 
 // config scss
-@import "./config-scss/vars.scss";// vars
 @import "./config-scss/fonts.scss";// fonts
 @import "./config-scss/global.scss";// global
 @import "./config-scss/reset-class.scss";// reset-class
 @import "./config-scss/mix-class.scss";// mix-class
 // /config scss
 
+// mix blocks
+@import "mix.blocks/1index.scss";
+// /mix blocks
+
 // common blocks
-@import "./common.blocks/page.scss";// page
-@import "./common.blocks/page__body.scss";// page__body
-@import "./common.blocks/logo.scss";// logo
-@import "./common.blocks/nav.scss";// nav
-@import "./common.blocks/navigation-list.scss";// navigation-list
-@import "./common.blocks/header.scss";// header
-@import "./common.blocks/main.scss";// main
+@import "common.blocks/1index.scss";
 // /common blocks
 
 // sections
-@import "./common.blocks/hero.scss";// hero
-@import "./common.blocks/who-we-are.scss";// who-we-are
-@import "./common.blocks/core-values.scss";// core-values
-@import "./common.blocks/key-services.scss";// key-services
-@import "./common.blocks/partners.scss";// partners
-@import "./common.blocks/popup.scss";// popup
-@import "./common.blocks/services.scss";// services
-@import "./common.blocks/about.scss";// about
-@import "./common.blocks/team.scss";// team
-@import "./common.blocks/blog.scss";// blog
+@import "sections/1index.scss";
 // /sections
 
-// form
-@import "./common.blocks/form.scss";// form
-// /form
-
-@import "./common.blocks/footer.scss";// footer
+@import "./common.blocks/footer";// footer
