@@ -57,10 +57,12 @@
 	border: 2px solid var(--dark-color);
 	border-radius: 50%;
 	background-color: var(--light-very-color);
+	transition: background-color 0.3s ease 0s;
 	&__icon {
 		width: 15px;
 		height: 15px;
-		fill: var(--light-color);
+		color: var(--light-color);
+		transition: color 0.3s ease 0s;
 	}
 
 	&_dark-color {

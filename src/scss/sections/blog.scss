@@ -22,26 +22,27 @@
 		position: relative;
 	}
 
+	&__tabs-nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 32px;
+	}
+
 	&__tabs-list {
 		position: relative;
 		display: inline-flex;
 		flex-wrap: wrap;
-		justify-content: center;
 		gap: 10px;
-		max-width: 600px;
-		// overflow: hidden;
 		padding: 0;
 		margin: 0;
 		margin-bottom: 30px;
 
 		@media (min-width: 576px) {
-			position: absolute;
-			top: 2px;
-			left: 0;
-			right: auto;
 			z-index: 10;
 			gap: 20px;
 			margin: 0;
+			max-width: calc(100% - 150px);
 		}
 	}
 
@@ -52,7 +53,7 @@
 		line-height: normal;
 
 		@media (min-width: 768px) {
-			padding: 9px 27px;
+			padding: 13px 34px;
 			font-size: 16px;
 		}
 
@@ -62,14 +63,55 @@
 		}
 	}
 
+	&__tabs-content {
+		@media (min-width: 576px) {
+		}
+	}
+
 	&__tabs-panel {
+		margin-bottom: 32px;
+		@media (min-width: 576px) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__buttons-nav-slider-box {
+	}
+
+	&__buttons-nav-slider {
+		outline: none;
+		@include hover {
+			&:hover {
+				.arrow-box-circle {
+					background-color: var(--light-very-color);
+					&__icon {
+						color: var(--dark-color);
+					}
+				}
+			}
+		}
+		&:focus-visible {
+			.arrow-box-circle {
+				background-color: var(--light-very-color);
+				&__icon {
+					color: var(--dark-color);
+				}
+			}
+		}
+
+		&_prev {
+			margin-right: 12px;
+			.arrow-box-circle__icon {
+				transform: rotate(180deg);
+			}
+		}
+
+		&_next {
+		}
 	}
 
 	&__slider {
-		padding-bottom: 60px;
 		@media (min-width: 576px) {
-			padding-top: 80px;
-			padding-bottom: 0;
 		}
 	}
 
@@ -87,7 +129,6 @@
 	}
 
 	&__slide-img {
-		// max-width: 260px;
 		height: 180px;
 		border-radius: 10px;
 	}
@@ -113,51 +154,15 @@
 		font-weight: 500;
 	}
 
-	&__buttons-slider-box {
-		position: absolute;
-		top: auto;
-		right: auto;
-		left: 0;
-		bottom: 2px;
-		display: flex;
-		justify-content: space-between;
-		width: 120px;
-		height: 50px;
-
-		@media (min-width: 576px) {
-			right: 2px;
-			top: 2px;
-			left: auto;
-			bottom: auto;
-		}
-	}
-
 	&__button-slider {
-		position: relative;
+		position: absolute;
 		top: 0;
-		right: 0;
 		left: 0;
-		bottom: 0;
-		width: 50px;
-		height: 50px;
-		margin: 0;
-
-		.arrow-box-circle__icon {
-			width: 15px;
-			height: 15px;
-		}
-
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
 		&::after {
 			display: none;
-		}
-
-		&_prev {
-			.arrow-box-circle__icon {
-				transform: rotate(180deg);
-			}
-		}
-
-		&_next {
 		}
 	}
 }
