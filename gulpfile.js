@@ -81,7 +81,6 @@ const css = () => {
 
 		.pipe(gulpIf(IS_BUILD, gulpAutoprefixer({
 			cascade: false,
-			grid: true,
 			overrideBrowserslist: ["last 5 versions"]
 		})))
 		.pipe(gulpIf(IS_BUILD, gulpCsso()))
