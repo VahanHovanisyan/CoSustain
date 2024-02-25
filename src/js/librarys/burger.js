@@ -77,8 +77,15 @@ class Burger {
 		const fixBlocks = document?.querySelectorAll('[data-fixed-block]');
 		const pagePosition = window.scrollY;
 		const paddingOffset = `${(window.innerWidth - document.body.offsetWidth)}px`;
+		const paddingOffsetHeader = `${(window.innerWidth - document.body.offsetWidth) + 15}px`;
 		document.documentElement.style.scrollBehavior = 'auto';
-		fixBlocks.forEach(el => { el.style.paddingRight = paddingOffset; });
+		fixBlocks.forEach(el => {
+			el.style.paddingRight =  paddingOffset;
+			if (el.classList.contains('header')) {
+				el.style.paddingRight = paddingOffsetHeader;
+			}
+
+		});
 		document.body.style.paddingRight = paddingOffset;
 		document.body.classList.add('dis-scroll');
 		document.body.dataset.position = pagePosition;
@@ -91,9 +98,10 @@ class Burger {
 		const fixBlocks = document?.querySelectorAll('[data-fixed-block]');
 		const pagePosition = parseInt(document.body.dataset.position, 10);
 		fixBlocks.forEach(el => { el.style.paddingRight = '0'; });
-		document.body.style.paddingRight = '0px';
+		document.body.style.paddingRight = '0';
 		document.body.style.top = '';
 		document.querySelector('.header').style.top = 0;
+		document.querySelector('.header').style.paddingRight = "15px"
 		document.body.classList.remove('dis-scroll');
 		window.scroll({
 			top: pagePosition,

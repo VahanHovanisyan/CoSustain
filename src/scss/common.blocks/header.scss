@@ -1,6 +1,7 @@
 .header {
 	z-index: 102;
 	padding: 15px;
+	overflow: hidden;
 	background-color: var(--light-color);
 
 	&::before {

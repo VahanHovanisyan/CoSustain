@@ -22,11 +22,13 @@
 	&__icon {
 		fill: var(--dark-color);
 		stroke:var(--dark-color);
-		stroke-width: 1.5;
+		stroke-width: 1.6;
 		width: 33px;
 		height: 33px;
+		transition: stroke 0.3s ease 0s, fill 0.3s ease 0s;
 
 		&_stroke-width {
+			stroke-width: 0.4;
 		}
 	}
 }

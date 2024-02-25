@@ -5,17 +5,15 @@
 	}
 
 	&__container {
-
 	}
 
 	&__content {
-
 	}
 
 	&__title {
 		margin-bottom: 35px;
 
-		@media(min-width:768px){
+		@media (min-width: 768px) {
 			margin-bottom: 50px;
 		}
 	}
@@ -95,6 +93,7 @@
 
 	&__slide-title {
 		font-size: 20px;
+		line-height: 27px;
 	}
 
 	&__slide-text {
@@ -107,7 +106,10 @@
 		display: flex;
 		justify-content: space-between;
 		padding: 11px 9px 11px 27px;
+		color: rgb(255, 255, 255);
+		font-family: "Hauora";
 		font-size: 16px;
+		font-weight: 500;
 	}
 
 	&__buttons-slider-box {
