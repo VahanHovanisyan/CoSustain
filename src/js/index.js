@@ -5,7 +5,10 @@ import { Navigation } from 'swiper/modules';
 import Tabs from "./librarys/tabs.js";
 
 const burger = new Burger("header", {
-	breakpoint: 0
+	breakpoint: 0,
+	fixed: {
+		defaultValue: true,
+	},
 })
 
 const popup = new Popup();
