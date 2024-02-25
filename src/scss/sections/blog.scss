@@ -50,6 +50,7 @@
 	&__tabs-button {
 		padding: 10px 15px;
 		font-size: 15px;
+		line-height: normal;
 
 		@media (min-width: 768px) {
 			padding: 9px 27px;
@@ -66,8 +67,10 @@
 	}
 
 	&__slider {
+		padding-bottom: 60px;
 		@media (min-width: 576px) {
 			padding-top: 80px;
+			padding-bottom: 0;
 		}
 	}
 
