@@ -1,7 +1,12 @@
 .header {
 	z-index: 102;
-	padding: 15px;
+	padding-left: 15px;
+	padding: 5px 15px;
 	overflow: hidden;
+
+	@media(min-width:992px){
+		padding: 15px;
+	}
 
 	&::before {
 		content: "";
@@ -17,10 +22,16 @@
 
 	&__container {
 		max-width: 1360px;
-		padding-top: 15px;
-		padding-bottom: 15px;
+		// padding-top: 5px;
+		// padding-bottom: 5px;
+		padding: 5px 15px;
 		border-radius: 20px;
 		overflow: hidden;
 		background-color: var(--light-very-color);
+		@media(min-width:992px){
+			// padding-top: 15px;
+			// padding-bottom: 15px;
+			padding: 15px;
+		}
 	}
 }

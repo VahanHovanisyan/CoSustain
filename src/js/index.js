@@ -7,6 +7,7 @@ import Tabs from "./librarys/tabs.js";
 import DynamicAdaptiveElement from './librarys/dinamicAdaptiveElement.js';
 
 smoothscroll.polyfill();
+window.__forceSmoothScrollPolyfill__ = true;
 
 const burger = new Burger("header", {
 	breakpoint: 0,
@@ -15,7 +16,16 @@ const burger = new Burger("header", {
 	},
 })
 
-document.documentElement.style.setProperty('--header-height', burger.header.offsetHeight + 'px')
+
+const resizeObserver = new ResizeObserver((entries) => {
+	entries.forEach(entri => {
+		if (entri.contentRect) {
+			document.documentElement.style.setProperty('--header-height', document.querySelector('.header').offsetHeight + 'px')
+		}
+	})
+})
+
+resizeObserver.observe(document.querySelector('.header'))
 
 const popup = new Popup();
 

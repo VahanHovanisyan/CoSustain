@@ -174,7 +174,7 @@ class Burger {
 	enableFixed() {
 		this.header.classList.add('header_fixed');
 		this.header.setAttribute('data-fixed-block', '');
-		document.body.style.paddingTop = this.header.offsetHeight + "px";
+		document.documentElement.style.setProperty('--header-height', this.header.offsetHeight + 'px')
 	}
 	disableFixed() {
 		this.header.style.setProperty('padding-right', '0')
@@ -219,7 +219,7 @@ class Burger {
 		e.key === "Escape" && this.navHide();
 	}
 	getOverlay(open) {
-		if (this.options.overlay) return;
+		if (!this.options.overlay) return;
 		const overlay = document.createElement('div');
 		overlay.classList.add('header__overlay');
 		this.headerContainer = this.header?.querySelector('.header__container');
@@ -303,6 +303,7 @@ class Burger {
 		}
 		// click to overlay
 		e.target.closest('.header__overlay') && this.navHide();
+		e.target.closest('[data-burger-logo]') && this.navHide();
 	}
 }
 
