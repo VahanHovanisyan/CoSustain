@@ -269,6 +269,10 @@ body.dis-scroll {
 	border: 2px solid var(--dark-color);
 	transition: background-color 0.3s ease 0s;
 	outline: none;
+
+	&_active {
+		align-items: center;
+	}
 	@include hover {
 		&:hover {
 			background-color: var(--light-very-color);
@@ -298,14 +302,14 @@ body.dis-scroll {
 	background-color: var(--light-very-color);
 	transition-property: transform, background-color;
 	transition-duration: var(--burger-speed);
-	@media (min-width: 576px) {
-		height: 3px;
-	}
+	// @media (min-width: 576px) {
+	// 	height: 3px;
+	// }
 }
 
 .burger_active .burger__line_top {
-	transform: translateY(7px) rotate(45deg);
-	@media (min-width: 576px) {
+	transform: translateY(8px) rotate(45deg);
+	@media (min-width: 992px) {
 		transform: translateY(10px) rotate(45deg);
 	}
 }
@@ -315,8 +319,8 @@ body.dis-scroll {
 }
 
 .burger_active .burger__line_bottom {
-	transform: translateY(-9px) rotate(-45deg);
-	@media (min-width: 576px) {
+	transform: translateY(-6px) rotate(-45deg);
+	@media (min-width: 992px) {
 		transform: translateY(-12px) rotate(-45deg);
 	}
 }
