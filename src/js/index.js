@@ -79,7 +79,7 @@ lazyImages.forEach(img => {
 
 
 document.querySelector('.blog__buttons-nav-slider_next').addEventListener('click', function () {
-	document.querySelectorAll('.swiper-button-next').forEach(item => {
+	this.closest('.blog__tabs').querySelectorAll('.swiper-button-next').forEach(item => {
 		if (item.closest('.tabs__panel_active')) {
 			item.click()
 		}
@@ -87,7 +87,7 @@ document.querySelector('.blog__buttons-nav-slider_next').addEventListener('click
 })
 
 document.querySelector('.blog__buttons-nav-slider_prev').addEventListener('click', function () {
-	document.querySelectorAll('.swiper-button-prev').forEach(item => {
+	this.closest('.blog__tabs').querySelectorAll('.swiper-button-prev').forEach(item => {
 		if (item.closest('.tabs__panel_active')) {
 			item.click()
 		}

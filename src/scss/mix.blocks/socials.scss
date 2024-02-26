@@ -13,19 +13,17 @@
 		outline: none;
 		&:hover,&:focus-visible {
 			.soc1als__icon {
-				stroke: #000;
-				fill: #000;
+				color: #000;
 			}
 		}
 	}
 
 	&__icon {
-		fill: var(--dark-color);
-		stroke:var(--dark-color);
 		stroke-width: 1.6;
 		width: 33px;
 		height: 33px;
-		transition: stroke 0.3s ease 0s, fill 0.3s ease 0s;
+		color: var(--dark-color);
+		transition: color 0.3s ease 0s;
 
 		&_stroke-width {
 			stroke-width: 0.4;
