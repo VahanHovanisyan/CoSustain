@@ -63,7 +63,7 @@ const html = () => {
 			prefix: '@',
 			basepath: '@file'
 		}))
-		.pipe(gulpIf(IS_BUILD, gulpWebpHtml()))
+		// .pipe(gulpIf(IS_BUILD, gulpWebpHtml()))
 		.pipe(gulpTypograf({
 			locale: ['ru', 'en-US']
 		}))

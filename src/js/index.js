@@ -1,13 +1,9 @@
-import smoothscroll from 'smoothscroll-polyfill';
 import Burger from "./librarys/burger.js";
 import Popup from "./librarys/popup.js";
 import Swiper from "swiper";
 import { Navigation } from 'swiper/modules';
 import Tabs from "./librarys/tabs.js";
 import DynamicAdaptiveElement from './librarys/dinamicAdaptiveElement.js';
-
-smoothscroll.polyfill();
-window.__forceSmoothScrollPolyfill__ = true;
 
 const burger = new Burger("header", {
 	breakpoint: 0,
@@ -20,12 +16,37 @@ const burger = new Burger("header", {
 const resizeObserver = new ResizeObserver((entries) => {
 	entries.forEach(entri => {
 		if (entri.contentRect) {
-			document.documentElement.style.setProperty('--header-height', document.querySelector('.header').offsetHeight + 'px')
+			document.documentElement.style.setProperty('--burger-header-height', document.querySelector('.header').offsetHeight + 'px');
+			document.documentElement.style.setProperty('--header-height', document.querySelector('.header').offsetHeight)
 		}
 	})
 })
 
 resizeObserver.observe(document.querySelector('.header'))
+
+// scroll onclick
+
+
+const getGotoLink = (e) => {
+	const link = e.target.closest('[data-goto]')
+	if (link) {
+		link.dataset.goto = link?.getAttribute('href')
+		if (document.querySelector(link.dataset.goto)) {
+			const gotoBlock = document.querySelector(link.dataset.goto);
+			const gotoBlockValue = gotoBlock?.getBoundingClientRect().top + scrollY - getComputedStyle(document.documentElement).getPropertyValue('--header-height');
+
+			window.scrollTo({
+				top: gotoBlockValue,
+				behavior: "smooth"
+			});
+			e.preventDefault();
+		}
+	}
+}
+
+document.addEventListener('click', getGotoLink);
+
+
 
 const popup = new Popup();
 
@@ -57,16 +78,11 @@ const tabs = new Tabs('tab1', {
 	firstTabActive: true,
 })
 
-const lazyImages = document.querySelectorAll('[data-src], [data-srcset]');
+const lazyImages = document.querySelectorAll('[data-src]');
 const observerLazyLoad = new IntersectionObserver(entries => {
 	entries.forEach(entri => {
 		if (entri.isIntersecting) {
-			if (entri.target.hasAttribute('data-srcset')) {
-				entri.target.setAttribute('srcset', entri.target.dataset.srcset)
-			} else if (entri.target.hasAttribute('data-src')) {
-				entri.target.setAttribute('src', entri.target.dataset.src)
-			}
-
+			entri.target.setAttribute('src', entri.target.dataset.src)
 			entri.target.style.transition = '0.3s opacity ease 0s'
 			entri.target.style.opacity = '0.3'
 			entri.target.addEventListener('load', function () {

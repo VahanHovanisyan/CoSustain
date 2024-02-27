@@ -174,7 +174,7 @@ class Burger {
 	enableFixed() {
 		this.header.classList.add('header_fixed');
 		this.header.setAttribute('data-fixed-block', '');
-		document.documentElement.style.setProperty('--header-height', this.header.offsetHeight + 'px')
+		document.documentElement.style.setProperty('--burger-header-height', this.header.offsetHeight + 'px')
 	}
 	disableFixed() {
 		this.header.style.setProperty('padding-right', '0')
