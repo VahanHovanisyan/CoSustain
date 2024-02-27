@@ -41,12 +41,10 @@ const getGotoLink = (e) => {
 			});
 			e.preventDefault();
 		}
+
 	}
 }
-
 document.addEventListener('click', getGotoLink);
-
-
 
 const popup = new Popup();
 

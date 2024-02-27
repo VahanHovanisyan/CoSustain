@@ -80,7 +80,7 @@ class Burger {
 		const paddingOffsetHeader = `${(window.innerWidth - document.body.offsetWidth) + 15}px`;
 		document.documentElement.style.scrollBehavior = 'auto';
 		fixBlocks.forEach(el => {
-			el.style.paddingRight =  paddingOffset;
+			el.style.paddingRight = paddingOffset;
 			if (el.classList.contains('header')) {
 				el.style.paddingRight = paddingOffsetHeader;
 			}
@@ -289,6 +289,12 @@ class Burger {
 				this.navShow();
 			}
 		}
+
+		if (this.burger.classList.contains(this.elemsClassNameActive.burger) &&
+			this.nav.classList.contains(this.elemsClassNameActive.nav)) {
+			e.target.closest('[data-burger-logo]') && this.navHide();
+		}
+
 		// click to .nav__link
 		if (currentNavLink) {
 			if (this.options.marker) {
@@ -303,7 +309,6 @@ class Burger {
 		}
 		// click to overlay
 		e.target.closest('.header__overlay') && this.navHide();
-		e.target.closest('[data-burger-logo]') && this.navHide();
 	}
 }
 
