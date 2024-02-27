@@ -157,7 +157,12 @@ const dynamicAdaptInstance = new DynamicAdaptiveElement(elementsData);
 const resizeObserverSlide = new ResizeObserver((entries) => {
 	entries.forEach(entri => {
 		if (entri.contentRect) {
-			entri.target.style.setProperty('--slide-text-height', entri.target.scrollHeight + 'px');
+			if (entri.target.classList.contains('team__person-descr')) {
+				entri.target.style.setProperty('--descr-text-height', entri.target.scrollHeight + 'px');
+			}
+			if (entri.target.classList.contains('blog__slide-text')) {
+				entri.target.style.setProperty('--slide-text-height', entri.target.scrollHeight + 'px');
+			}
 		}
 	})
 })
@@ -165,4 +170,4 @@ const resizeObserverSlide = new ResizeObserver((entries) => {
 
 
 document.querySelectorAll('.blog__slide-text').forEach(item => resizeObserverSlide.observe(item))
-
+document.querySelectorAll('.team__person-descr').forEach(item => resizeObserverSlide.observe(item))
