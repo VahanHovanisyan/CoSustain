@@ -123,3 +123,46 @@ const elementsData = [
 ];
 
 const dynamicAdaptInstance = new DynamicAdaptiveElement(elementsData);
+
+// const trainersList = document.querySelector(".swiper-wrapper");
+// const trainersDescr = document.querySelectorAll('.blog__slide-text');
+// trainersDescr.forEach(descrEl => {
+//     descrEl.setAttribute('aria-hidden', 'true')
+// });
+
+// trainersList?.addEventListener('mouseover', (event) => {
+//     const item = event.target.closest('.blog__slide');
+//     const descr = item?.querySelector('.blog__slide-text');
+//     const itemLink = item?.querySelector('.blog__slide-link');
+//     const heightTrainersItemLink = itemLink?.scrollHeight;
+//     if (item) {
+//         descr.setAttribute('aria-hidden', 'false')
+//     }
+//     item?.style.setProperty('--height-trainers-descr', `${-descr.scrollHeight - 25}px`);
+//     if (descr?.scrollHeight >= 200) {
+//         item?.style.setProperty('--height-trainers-descr', `-${heightTrainersItemLink + (item.scrollHeight / 2)}px`);
+//     }
+// });
+
+// trainersList?.addEventListener('mouseout', (event) => {
+//     const item = event.target.closest('.blog__slide');
+//     const descr = item?.querySelector('.blog__slide-text');
+//     descr?.setAttribute('aria-hidden', 'true')
+//     if (item) {
+//         descr.setAttribute('aria-hidden', 'true')
+//     }
+// });
+
+
+const resizeObserverSlide = new ResizeObserver((entries) => {
+	entries.forEach(entri => {
+		if (entri.contentRect) {
+			entri.target.style.setProperty('--slide-text-height', entri.target.scrollHeight + 'px');
+		}
+	})
+})
+
+
+
+document.querySelectorAll('.blog__slide-text').forEach(item => resizeObserverSlide.observe(item))
+

@@ -116,6 +116,11 @@
 	}
 
 	&__slide {
+		&:hover {
+			.blog__slide-text {
+				height: var(--slide-text-height);
+			}
+		}
 	}
 
 	&__slide-inner {
@@ -141,8 +146,14 @@
 
 	&__slide-text {
 		height: 80px;
+		max-height: 250px;
 		margin: 0;
 		overflow: auto;
+		transition: height 0.3s ease 0s;
+		color: var(--text-color);
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 22px;
 	}
 
 	&__slide-link {
