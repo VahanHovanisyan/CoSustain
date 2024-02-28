@@ -36,11 +36,11 @@
 		text-align: center;
 
 
-		&:hover {
-			.team__person-descr {
-				height: var(--descr-text-height);
-			}
-		}
+		// &:hover {
+		// 	.team__person-descr {
+		// 		height: var(--descr-text-height);
+		// 	}
+		// }
 
 		@media(min-width:768px){
 			flex: 0 0 300px;
@@ -70,7 +70,7 @@
 		max-height: 250px;
 		height: 80px;
 		overflow: auto;
-		transition: height 0.3s ease 0s;
+		// transition: height 0.3s ease 0s;
 		padding: 0 10px;
 	}
 }
