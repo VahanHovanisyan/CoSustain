@@ -116,11 +116,20 @@
 	}
 
 	&__slide {
-		&:hover {
-			.blog__slide-text {
-				height: var(--slide-text-height);
+		@include hover {
+			&:hover {
+				.blog__slide-text {
+					height: var(--slide-text-height);
+				}
 			}
 		}
+		@include hover-none{
+			&_active {
+				.blog__slide-text {
+					height: var(--slide-text-height);
+				}
+			}
+		};
 	}
 
 	&__slide-inner {
@@ -154,6 +163,11 @@
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 22px;
+
+		&:focus-visible {
+			outline: none;
+			height: var(--slide-text-height);
+		}
 	}
 
 	&__slide-link {

@@ -291,8 +291,9 @@ class Burger {
 		}
 
 		if (this.burger.classList.contains(this.elemsClassNameActive.burger) &&
-			this.nav.classList.contains(this.elemsClassNameActive.nav)) {
-			e.target.closest('[data-burger-logo]') && this.navHide();
+			this.nav.classList.contains(this.elemsClassNameActive.nav) &&
+			e.target.closest('[data-burger-logo]')) {
+			this.navHide();
 		}
 
 		// click to .nav__link

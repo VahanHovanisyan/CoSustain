@@ -171,3 +171,15 @@ const resizeObserverSlide = new ResizeObserver((entries) => {
 
 document.querySelectorAll('.blog__slide-text').forEach(item => resizeObserverSlide.observe(item))
 document.querySelectorAll('.team__person-descr').forEach(item => resizeObserverSlide.observe(item))
+
+
+const blogSection = document.querySelector('.blog');
+
+blogSection.addEventListener('click', function (event) {
+	if (window.matchMedia('(pointer: coarse)').matches) {
+		if (event.target.closest('.blog__slide')) {
+			event.target.closest('.blog__slide').classList.toggle('blog__slide_active');
+			
+		}
+	}
+})

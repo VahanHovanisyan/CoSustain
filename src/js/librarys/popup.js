@@ -1,373 +1,371 @@
 export default class Popup {
 
-  constructor(options) {
+	constructor(options) {
 
-    let defaultOptions = {
+		let defaultOptions = {
 
-      isOpen: () => {},
+			isOpen: () => { },
 
-      isClose: () => {},
+			isClose: () => { },
 
-    }
+		}
 
-    this.options = Object.assign(defaultOptions, options);
+		this.options = Object.assign(defaultOptions, options);
 
-    this.modal = document.querySelector('.graph-modal');
+		this.modal = document.querySelector('.graph-modal');
 
-    this.speed = 300;
+		this.speed = 300;
 
-    this.animation = 'fade';
+		this.animation = 'fade';
 
-    this._reOpen = false;
+		this._reOpen = false;
 
-    this._nextContainer = false;
+		this._nextContainer = false;
 
-    this.modalContainer = false;
+		this.modalContainer = false;
 
-    this.isOpen = false;
+		this.isOpen = false;
 
-    this.previousActiveElement = false;
+		this.previousActiveElement = false;
 
-    this._focusElements = [
+		this._focusElements = [
 
-      'a[href]',
+			'a[href]',
 
-      'input',
+			'input',
 
-      'select',
+			'select',
 
-      'textarea',
+			'textarea',
 
-      'button',
+			'button',
 
-      'iframe',
+			'iframe',
 
-      '[contenteditable]',
+			'[contenteditable]',
 
-      '[tabindex]:not([tabindex^="-"])'
+			'[tabindex]:not([tabindex^="-"])'
 
-    ];
+		];
 
-    this._fixBlocks = document.querySelectorAll('.fix-block');
+		this._fixBlocks = document.querySelectorAll('.fix-block');
 
-    this.events();
+		this.events();
 
-  }
+	}
 
 
 
-  events() {
+	events() {
 
-    if (this.modal) {
+		if (this.modal) {
 
-      document.addEventListener('click', function (e) {
+			document.addEventListener('click', function (e) {
 
-        const clickedElement = e.target.closest(`[data-graph-path]`);
+				const clickedElement = e.target.closest(`[data-graph-path]`);
 
-        if (clickedElement) {
+				if (clickedElement) {
 
-          let target = clickedElement.dataset.graphPath;
+					let target = clickedElement.dataset.graphPath;
 
-          let animation = clickedElement.dataset.graphAnimation;
+					let animation = clickedElement.dataset.graphAnimation;
 
-          let speed = clickedElement.dataset.graphSpeed;
+					let speed = clickedElement.dataset.graphSpeed;
 
-          this.animation = animation ? animation : 'fade';
+					this.animation = animation ? animation : 'fade';
 
-          this.speed = speed ? parseInt(speed) : 300;
+					this.speed = speed ? parseInt(speed) : 300;
 
-          this._nextContainer = document.querySelector(`[data-graph-target="${target}"]`);
+					this._nextContainer = document.querySelector(`[data-graph-target="${target}"]`);
 
-          this.open();
+					this.open();
 
-          return;
+					return;
 
-        }
+				}
 
 
 
-        if (e.target.closest('.js-modal-close')) {
+				if (e.target.closest('.js-modal-close')) {
 
-          this.close();
+					this.close();
 
-          return;
+					return;
 
-        }
+				}
 
-      }.bind(this));
+			}.bind(this));
 
 
 
-      window.addEventListener('keydown', function (e) {
+			window.addEventListener('keydown', function (e) {
 
-        if (e.keyCode == 27 && this.isOpen) {
+				if (e.keyCode == 27 && this.isOpen) {
 
-          this.close();
+					this.close();
 
-        }
+				}
 
 
 
-        if (e.which == 9 && this.isOpen) {
+				if (e.which == 9 && this.isOpen) {
 
-          this.focusCatch(e);
+					this.focusCatch(e);
 
-          return;
+					return;
 
-        }
+				}
 
-      }.bind(this));
+			}.bind(this));
 
 
 
-      document.addEventListener('click', function (e) {
+			document.addEventListener('click', function (e) {
 
-        if (e.target.classList.contains('graph-modal') && e.target.classList.contains("is-open")) {
+				if (e.target.classList.contains('graph-modal') && e.target.classList.contains("is-open")) {
 
-          this.close();
+					this.close();
 
-        }
+				}
 
-      }.bind(this));
+			}.bind(this));
 
-    }
+		}
 
 
 
-  }
+	}
 
 
 
-  open(selector) {
+	open(selector) {
 
-    this.previousActiveElement = document.activeElement;
+		this.previousActiveElement = document.activeElement;
 
 
 
-    if (this.isOpen) {
+		if (this.isOpen) {
 
-      this.reOpen = true;
+			this.reOpen = true;
 
-      this.close();
+			this.close();
 
-      return;
+			return;
 
-    }
+		}
 
 
 
-    this.modalContainer = this._nextContainer;
+		this.modalContainer = this._nextContainer;
 
 
 
-    if (selector) {
+		if (selector) {
 
-      this.modalContainer = document.querySelector(`[data-graph-target="${selector}"]`);
+			this.modalContainer = document.querySelector(`[data-graph-target="${selector}"]`);
 
-    }
+		}
 
 
 
-    this.modalContainer.scrollTo(0, 0)
+		this.modalContainer.scrollTo(0, 0)
 
 
 
-    this.modal.style.setProperty('--transition-time', `${this.speed / 1000}s`);
+		this.modal.style.setProperty('--transition-time', `${this.speed / 1000}s`);
 
-    this.modal.classList.add('is-open');
+		this.modal.classList.add('is-open');
 
 
 
-    document.body.style.scrollBehavior = 'auto';
+		document.body.style.scrollBehavior = 'auto';
 
-    document.documentElement.style.scrollBehavior = 'auto';
+		document.documentElement.style.scrollBehavior = 'auto';
 
 
 
-    this.disableScroll();
+		this.disableScroll();
 
 
 
-    this.modalContainer.classList.add('graph-modal-open');
+		this.modalContainer.classList.add('graph-modal-open');
 
-    this.modalContainer.classList.add(this.animation);
+		this.modalContainer.classList.add(this.animation);
 
 
 
-    setTimeout(() => {
+		setTimeout(() => {
 
-      this.options.isOpen(this);
+			this.options.isOpen(this);
 
-      this.modalContainer.classList.add('animate-open');
+			this.modalContainer.classList.add('animate-open');
 
-      this.isOpen = true;
+			this.isOpen = true;
 
-      this.focusTrap();
+			this.focusTrap();
 
-    }, this.speed);
+		}, this.speed);
 
-  }
+	}
 
 
 
-  close() {
+	close() {
 
-    if (this.modalContainer) {
+		if (this.modalContainer) {
 
-      this.modalContainer.classList.remove('animate-open');
+			this.modalContainer.classList.remove('animate-open');
 
-      this.modalContainer.classList.remove(this.animation);
+			this.modalContainer.classList.remove(this.animation);
 
-      this.modal.classList.remove('is-open');
+			this.modal.classList.remove('is-open');
 
-      this.modalContainer.classList.remove('graph-modal-open');
+			this.modalContainer.classList.remove('graph-modal-open');
 
 
 
-      this.enableScroll();
+			this.enableScroll();
 
 
 
-      document.body.style.scrollBehavior = 'auto';
+			document.body.style.scrollBehavior = 'auto';
 
-      document.documentElement.style.scrollBehavior = 'auto';
+			document.documentElement.style.scrollBehavior = 'auto';
 
 
 
-      this.options.isClose(this);
+			this.options.isClose(this);
 
-      this.isOpen = false;
+			this.isOpen = false;
 
-      this.focusTrap();
+			this.focusTrap();
 
 
 
-      if (this.reOpen) {
+			if (this.reOpen) {
 
-        this.reOpen = false;
+				this.reOpen = false;
 
-        this.open();
+				this.open();
 
-      }
+			}
 
-    }
+		}
 
-  }
+	}
 
 
 
-  focusCatch(e) {
+	focusCatch(e) {
 
-    const nodes = this.modalContainer.querySelectorAll(this._focusElements);
+		const nodes = this.modalContainer.querySelectorAll(this._focusElements);
 
-    const nodesArray = Array.prototype.slice.call(nodes);
+		const nodesArray = Array.prototype.slice.call(nodes);
 
-    const focusedItemIndex = nodesArray.indexOf(document.activeElement)
+		const focusedItemIndex = nodesArray.indexOf(document.activeElement)
 
-    if (e.shiftKey && focusedItemIndex === 0) {
+		if (e.shiftKey && focusedItemIndex === 0) {
 
-      nodesArray[nodesArray.length - 1].focus();
+			nodesArray[nodesArray.length - 1].focus();
 
-      e.preventDefault();
+			e.preventDefault();
 
-    }
+		}
 
-    if (!e.shiftKey && focusedItemIndex === nodesArray.length - 1) {
+		if (!e.shiftKey && focusedItemIndex === nodesArray.length - 1) {
 
-      nodesArray[0].focus();
+			nodesArray[0].focus();
 
-      e.preventDefault();
+			e.preventDefault();
 
-    }
+		}
 
-  }
+	}
 
 
 
-  focusTrap() {
+	focusTrap() {
 
-    const nodes = this.modalContainer.querySelectorAll(this._focusElements);
+		const nodes = this.modalContainer.querySelectorAll(this._focusElements);
 
-    if (this.isOpen) {
+		if (this.isOpen) {
 
-      if (nodes.length) nodes[0].focus();
+			if (nodes.length) nodes[0].focus();
 
-    } else {
+		} else {
 
-      this.previousActiveElement.focus();
+			this.previousActiveElement.focus();
 
-    }
+		}
 
-  }
+	}
 
 
 
-  disableScroll() {
+	disableScroll() {
 
-    let pagePosition = window.scrollY;
+		let pagePosition = window.scrollY;
 
-    this.lockPadding();
+		this.lockPadding();
 
-    document.body.classList.add('disable-scroll');
+		document.body.classList.add('disable-scroll');
 
-    document.body.dataset.position = pagePosition;
+		document.body.dataset.position = pagePosition;
 
-    document.body.style.top = -pagePosition + 'px';
+		document.body.style.top = -pagePosition + 'px';
 
-  }
+	}
 
 
 
-  enableScroll() {
+	enableScroll() {
+		document.querySelector('.header').style.paddingRight += "15px"
 
-    let pagePosition = parseInt(document.body.dataset.position, 10);
+		let pagePosition = parseInt(document.body.dataset.position, 10);
 
-    this.unlockPadding();
+		this.unlockPadding();
 
-    document.body.style.top = 'auto';
+		document.body.style.top = 'auto';
 
-    document.body.classList.remove('disable-scroll');
+		document.body.classList.remove('disable-scroll');
 
-    window.scrollTo({
+		window.scrollTo({
 
-      top: pagePosition,
+			top: pagePosition,
 
-      left: 0
+			left: 0
 
-    });
+		});
 
-    document.body.removeAttribute('data-position');
+		document.body.removeAttribute('data-position');
 
-  }
+	}
 
 
 
-  lockPadding() {
+	lockPadding() {
+		const paddingOffsetHeader = `${(window.innerWidth - document.body.offsetWidth) + 15}px`;
+		let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
 
-    let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+		this._fixBlocks.forEach((el) => {
 
-    this._fixBlocks.forEach((el) => {
+			el.style.paddingRight = paddingOffset;
+		});
 
-      el.style.paddingRight = paddingOffset;
+		document.body.style.paddingRight = paddingOffset;
+		document.querySelector('.header').style.paddingRight = paddingOffsetHeader
+	}
 
-    });
 
-    document.body.style.paddingRight = paddingOffset;
 
-  }
+	unlockPadding() {
 
+		this._fixBlocks.forEach((el) => {
+			el.style.paddingRight = '0px';
 
-
-  unlockPadding() {
-
-    this._fixBlocks.forEach((el) => {
-
-      el.style.paddingRight = '0px';
-
-    });
-
-    document.body.style.paddingRight = '0px';
-
-  }
+		});
+		document.body.style.paddingRight = '0px';
+		document.querySelector('.header').style.paddingRight = "15px"
+	}
 
 }
