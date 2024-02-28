@@ -11,7 +11,7 @@
 
 	&__title {
 		margin-bottom: 35px;
-		@media(min-width:768px){
+		@media (min-width: 768px) {
 			margin-bottom: 50px;
 		}
 	}
@@ -20,9 +20,24 @@
 		display: flex;
 		justify-content: space-between;
 		gap: 25px;
-		overflow: auto;
-		@media(min-width:768px){
+		@media (min-width: 768px) {
 			gap: 50px;
+		}
+
+		overflow-x: scroll;
+
+		&::-webkit-scrollbar-track {
+			border-radius: 20px;
+		}
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 20px;
+			background: #717274;
+		}
+		&:hover::-webkit-scrollbar-thumb {
+			background: var(--dark-color);
 		}
 	}
 
@@ -35,18 +50,10 @@
 		padding-bottom: 30px;
 		text-align: center;
 
-
-		// &:hover {
-		// 	.team__person-descr {
-		// 		height: var(--descr-text-height);
-		// 	}
-		// }
-
-		@media(min-width:768px){
+		@media (min-width: 768px) {
 			flex: 0 0 300px;
 			max-width: 300px;
 		}
-
 	}
 
 	&__img-frame {
@@ -67,10 +74,6 @@
 
 	&__person-descr {
 		max-width: 260px;
-		max-height: 250px;
-		height: 80px;
-		overflow: auto;
-		// transition: height 0.3s ease 0s;
 		padding: 0 10px;
 	}
 }
