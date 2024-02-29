@@ -299,6 +299,7 @@ class Burger {
 						behavior: "smooth"
 					});
 					e.preventDefault()
+					e.stopPropagation()
 					this.navHide();
 				}
 
