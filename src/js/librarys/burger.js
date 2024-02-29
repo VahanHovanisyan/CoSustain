@@ -298,7 +298,7 @@ class Burger {
 					e.preventDefault()
 					e.stopPropagation()
 					window.scrollTo({
-						top: 0,
+						top: 10,
 						behavior: "smooth"
 					});
 
