@@ -280,6 +280,7 @@ class Burger {
 	headerHandle(e) {
 		const currentNavItem = e.target.closest('.nav__item');
 		const currentNavLink = e.target.closest('.nav__link');
+		const burgerLogo = e.target.closest('[data-burger-logo]');
 		// click to burger button
 		if (e.target.closest('.burger')) {
 			if (this.burger.classList.contains(this.elemsClassNameActive.burger) &&
@@ -291,9 +292,17 @@ class Burger {
 		}
 
 		if (this.burger.classList.contains(this.elemsClassNameActive.burger) &&
-			this.nav.classList.contains(this.elemsClassNameActive.nav) &&
-			e.target.closest('[data-burger-logo]')) {
-			this.navHide();
+			this.nav.classList.contains(this.elemsClassNameActive.nav)) {
+				if (burgerLogo) {
+					window.scrollTo({
+						top: 0,
+						behavior: "smooth"
+					});
+					e.preventDefault()
+					this.navHide();
+				}
+
+
 		}
 
 		// click to .nav__link

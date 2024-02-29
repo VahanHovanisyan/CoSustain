@@ -29,6 +29,7 @@ resizeObserver.observe(document.querySelector('.header'))
 
 const getGotoLink = (e) => {
 	const link = e.target.closest('[data-goto]')
+	const logo = e.target.closest('[data-burger-logo]')
 	if (link) {
 		link.dataset.goto = link?.getAttribute('href')
 		if (document.querySelector(link.dataset.goto)) {
@@ -41,7 +42,13 @@ const getGotoLink = (e) => {
 			});
 			e.preventDefault();
 		}
-
+	}
+	if (logo) {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth"
+		});
+		e.preventDefault();
 	}
 }
 document.addEventListener('click', getGotoLink);
