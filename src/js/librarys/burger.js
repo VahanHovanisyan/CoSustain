@@ -168,7 +168,7 @@ class Burger {
 		defaultValue && this.enableFixed();
 		if (scrolling) {
 			window.scrollY > scrolling ? this.enableFixed() : this.disableFixed();
-			window.onscroll = () => window.scrollY > scrolling ? this.enableFixed() : this.disableFixed();
+			window.scroll = () => window.scrollY > scrolling ? this.enableFixed() : this.disableFixed();
 		}
 	}
 	enableFixed() {
@@ -294,13 +294,15 @@ class Burger {
 		if (this.burger.classList.contains(this.elemsClassNameActive.burger) &&
 			this.nav.classList.contains(this.elemsClassNameActive.nav)) {
 				if (burgerLogo) {
+					this.navHide();
+					e.preventDefault()
+					e.stopPropagation()
 					window.scrollTo({
 						top: 0,
 						behavior: "smooth"
 					});
-					e.preventDefault()
-					e.stopPropagation()
-					this.navHide();
+
+
 				}
 
 
