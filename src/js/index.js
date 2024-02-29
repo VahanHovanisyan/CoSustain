@@ -10,6 +10,7 @@ const burger = new Burger("header", {
 	fixed: {
 		defaultValue: true,
 	},
+	speed: 500
 })
 
 

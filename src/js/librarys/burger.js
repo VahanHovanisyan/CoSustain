@@ -293,17 +293,20 @@ class Burger {
 
 		if (this.burger.classList.contains(this.elemsClassNameActive.burger) &&
 			this.nav.classList.contains(this.elemsClassNameActive.nav)) {
-				if (burgerLogo) {
-					this.navHide();
-					e.preventDefault()
-					e.stopPropagation()
+			if (burgerLogo) {
+				this.navHide();
+				e.preventDefault()
+				e.stopPropagation()
+				setTimeout(() => {
 					window.scrollTo({
-						top: 10,
+						top: 0,
 						behavior: "smooth"
 					});
+				}, this.options.speed);
 
 
-				}
+
+			}
 
 
 		}
