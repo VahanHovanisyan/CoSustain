@@ -302,13 +302,8 @@ class Burger {
 						top: 0,
 						behavior: "smooth"
 					});
-				}, 10);
-
-
-
+				}, this.options.speed);
 			}
-
-
 		}
 
 		// click to .nav__link
