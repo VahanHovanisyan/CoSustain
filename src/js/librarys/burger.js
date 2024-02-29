@@ -302,7 +302,7 @@ class Burger {
 						top: 0,
 						behavior: "smooth"
 					});
-				}, this.options.speed);
+				}, 10);
 
 
 
